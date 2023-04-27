@@ -1,0 +1,27 @@
+# ninja log v5
+5	865	7043309307745668	CMakeFiles/DapperDasher2D.dir/main.cpp.obj	627da98156a15ebd
+6042	6147	7043309360675970	DapperDasher2D.exe	d6283683546b2c0b
+111	376	7043309302883800	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.obj	9298fc960949e21
+377	1943	7043309318612516	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj	a8d099b04c949a62
+87	2000	7043309319147648	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.obj	f48c533bc99ced17
+31	524	7043309304389862	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.obj	ed549ab70241ff9f
+3320	4338	7043309342582444	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj	87c6aa99dd28c336
+59	1292	7043309312059337	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj	2fe04de36fd7d818
+168	1912	7043309318297216	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.obj	56250d80a2dd4c0
+524	2167	7043309320812816	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj	f13fd32abe4814ba
+13	2208	7043309321193522	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.obj	4792574dd682d3f2
+865	2438	7043309323566070	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.obj	6945dde66556fa57
+22	2658	7043309325743410	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj	6fb5d78008e091eb
+1292	2675	7043309325943314	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj	12d07c7f592a05f0
+1916	3319	7043309332368807	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj	50e2458509447cb
+2000	3388	7043309333064024	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj	efc655d363c2b820
+1943	3500	7043309334134633	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj	eaf304a105de996f
+2168	3536	7043309334510734	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj	1d63097ddd9750f
+2209	3544	7043309334590591	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj	481bdc8ba95223a8
+2438	3720	7043309336410146	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj	665d5fdc0f2dd132
+2676	3949	7043309338701152	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj	10dcbd23c5de3f36
+2658	3974	7043309338953181	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.obj	3f9e5c836e7385b4
+3389	4354	7043309342754025	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj	15234ea85d651ccd
+139	5915	7043309358293950	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.obj	333849f8dfcc5b0e
+4354	4466	7043309343890791	_deps/raylib-build/raylib/external/glfw/src/libglfw3.a	5935de14b297c3b7
+5915	6042	7043309359647284	_deps/raylib-build/raylib/libraylib.a	73a43345f7a3cf1f
