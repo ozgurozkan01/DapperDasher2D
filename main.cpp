@@ -1,7 +1,18 @@
-#include <iostream>
 #include "raylib.h"
+#include "GameManager.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    GameManager* gameManager = new GameManager;
+
+    gameManager->CreateGameWindow();
+    gameManager->SetGameFPS();
+
+    while(!WindowShouldClose())
+    {
+        gameManager->Play();
+    }
+
+
     return 0;
 }
