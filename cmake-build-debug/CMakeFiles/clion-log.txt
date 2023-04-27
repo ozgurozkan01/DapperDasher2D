@@ -1,4 +1,20 @@
 "C:\Program Files\JetBrains\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.1.1/bin/ninja/win/ninja.exe" -G Ninja -S C:\Users\ozgur\Documents\GitHub\DapperDasher2D -B C:\Users\ozgur\Documents\GitHub\DapperDasher2D\cmake-build-debug
+-- Populating raylib
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-subbuild
+ninja: no work to do.
+-- Testing if -Werror=pointer-arith can be used -- compiles
+-- Testing if -Werror=implicit-function-declaration can be used -- compiles
+-- Testing if -fno-strict-aliasing can be used -- compiles
+-- Using raylib's GLFW
+-- Using Win32 for window creation
+-- Audio Backend: miniaudio
+-- Building raylib static library
+-- Generated build type: Debug
+-- Compiling with the flags:
+--   PLATFORM=PLATFORM_DESKTOP
+--   GRAPHICS=GRAPHICS_API_OPENGL_33
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug
