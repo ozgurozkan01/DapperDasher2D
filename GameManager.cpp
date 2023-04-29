@@ -29,6 +29,7 @@ void GameManager::Play()
 {
     BeginDrawing();
     ClearBackground(BLACK);
+    
     EndDrawing();
 }
 
