@@ -24,12 +24,10 @@ void GameManager::SetGameFPS() const
     SetTargetFPS(fps);
 }
 
-/*
 void GameManager::ApplyGravity(int& speed) const
 {
     speed += gravity;
 }
-*/
 
 void GameManager::Play()
 {
@@ -38,15 +36,15 @@ void GameManager::Play()
 
     std::cout << player->positionY << std::endl;
 
-/*    if (!player->CheckIsOnGround())
+    if (!player->CheckIsOnGround())
     {
-        //ApplyGravity(player->jumpSpeed);
+        ApplyGravity(player->jumpSpeed);
     }
 
     else
     {
         player->UpdateJumpSpeed(0);
-    }*/
+    }
 
     if (IsKeyPressed(KEY_SPACE) && player->CheckIsOnGround())
     {
