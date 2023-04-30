@@ -13,6 +13,7 @@ int main() {
         gameManager->Play();
     }
 
+    CloseWindow();
 
     return 0;
 }

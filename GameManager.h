@@ -4,25 +4,30 @@
 
 #ifndef MAIN_CPP_GAMEMANAGER_H
 #define MAIN_CPP_GAMEMANAGER_H
+#include <iostream>
 
+class Player;
 
 class GameManager {
 
-    // game window properties
-    int windowWidth;
-    int windowHeight;
-    const char* gameName;
-
     int fps;
+    int gravity;
+
+    Player* player;
 
 public:
+
+    const int windowHeight;
+    const int windowWidth;
+    const char* gameName;
 
     GameManager();
     ~GameManager();
 
+    //void ApplyGravity(int& speed) const;
     void CreateGameWindow() const;
     void SetGameFPS() const;
-    static void Play();
+    void Play();
 };
 
 

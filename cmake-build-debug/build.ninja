@@ -65,6 +65,14 @@ build CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj: CXX_COMPILER__DapperDas
   OBJECT_DIR = CMakeFiles\DapperDasher2D.dir
   OBJECT_FILE_DIR = CMakeFiles\DapperDasher2D.dir
 
+build CMakeFiles/DapperDasher2D.dir/Player.cpp.obj: CXX_COMPILER__DapperDasher2D_Debug C$:/Users/ozgur/Documents/GitHub/DapperDasher2D/Player.cpp || cmake_object_order_depends_target_DapperDasher2D
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles\DapperDasher2D.dir\Player.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-src/src -IC:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = CMakeFiles\DapperDasher2D.dir
+  OBJECT_FILE_DIR = CMakeFiles\DapperDasher2D.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DapperDasher2D
@@ -73,7 +81,7 @@ build CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj: CXX_COMPILER__DapperDas
 #############################################
 # Link the executable DapperDasher2D.exe
 
-build DapperDasher2D.exe: CXX_EXECUTABLE_LINKER__DapperDasher2D_Debug CMakeFiles/DapperDasher2D.dir/main.cpp.obj CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj | _deps/raylib-build/raylib/libraylib.a _deps/raylib-build/raylib/external/glfw/src/libglfw3.a || _deps/raylib-build/raylib/external/glfw/src/libglfw3.a _deps/raylib-build/raylib/libraylib.a
+build DapperDasher2D.exe: CXX_EXECUTABLE_LINKER__DapperDasher2D_Debug CMakeFiles/DapperDasher2D.dir/main.cpp.obj CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj CMakeFiles/DapperDasher2D.dir/Player.cpp.obj | _deps/raylib-build/raylib/libraylib.a _deps/raylib-build/raylib/external/glfw/src/libglfw3.a || _deps/raylib-build/raylib/external/glfw/src/libglfw3.a _deps/raylib-build/raylib/libraylib.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  _deps/raylib-build/raylib/external/glfw/src/libglfw3.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DapperDasher2D.dir
