@@ -17,7 +17,7 @@ public:
     Player();
 
     void DrawPlayer() const;
-    //void Jump();
+    void Jump();
     void UpdateJumpSpeed(int newSpeed);
     bool CheckIsOnGround() const;
 };

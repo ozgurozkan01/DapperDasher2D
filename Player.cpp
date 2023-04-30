@@ -14,12 +14,10 @@ Player::Player()
     positionY = 250;
 }
 
-/*
 void Player::Jump()
 {
     positionY += jumpSpeed;
 }
-*/
 
 void Player::DrawPlayer() const
 {
