@@ -5,7 +5,12 @@
 #include "Player.h"
 #include <iostream>
 
-Player::Player() : jumpSpeed(-1000){}
+Player::Player() : jumpSpeed(-1000)
+{
+    frame = 0;
+    runningTime = 0;
+    animationUpdateTime = 1.f / 6.f;
+}
 
 void Player::Jump()
 {
@@ -47,5 +52,27 @@ void Player::SetPlayerTexture()
 float Player::GetJumpSpeed() const
 {
     return jumpSpeed;
+}
+
+void Player::AnimateScarfy()
+{
+    scarfyRectangle.x = frame * scarfyRectangle.width;
+    frame++;
+    runningTime = 0.f;
+
+    if (frame > 5)
+    {
+        frame = 0;
+    }
+}
+
+bool Player::CanUpdateAnimate() const
+{
+    return runningTime >= animationUpdateTime;
+}
+
+void Player::CalculateRunningTime()
+{
+    runningTime += GetFrameTime();
 }
 

@@ -55,9 +55,17 @@ void GameManager::Play()
             player->UpdateJumpSpeed(player->GetJumpSpeed());
         }
 
+        player->CalculateRunningTime();
+
+        if (player->CanUpdateAnimate())
+        {
+            player->AnimateScarfy();
+        }
+
         player->Jump();
         player->DrawPlayer();
         EndDrawing();
+
     }
 
     UnloadTexture(player->GetScarfy());

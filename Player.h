@@ -13,7 +13,10 @@ private:
     Vector2 scarfyPosition;
     Rectangle scarfyRectangle;
     Texture2D scarfy;
+    float frame;
 
+    float runningTime;
+    float animationUpdateTime;
 public:
 
     float velocity;
@@ -27,6 +30,9 @@ public:
     void Jump();
     void UpdateJumpSpeed(float newSpeed);
     bool CheckIsOnGround() const;
+    void AnimateScarfy();
+    void CalculateRunningTime();
+    bool CanUpdateAnimate() const;
 };
 
 
