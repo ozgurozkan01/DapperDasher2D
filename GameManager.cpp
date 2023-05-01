@@ -5,6 +5,7 @@
 #include "GameManager.h"
 #include "raylib.h"
 #include "Player.h"
+#include "Nebula.h"
 
 GameManager::GameManager() : windowHeight(300), windowWidth(400), gameName("Dapper Dasher 2D")
 {
@@ -12,6 +13,7 @@ GameManager::GameManager() : windowHeight(300), windowWidth(400), gameName("Dapp
     gravity = 3250;
 
     player = new Player();
+    nebula = new Nebula();
 }
 
 void GameManager::CreateGameWindow() const
@@ -33,7 +35,9 @@ void GameManager::Play()
 {
     CreateGameWindow();
     SetGameFPS();
+
     player->SetPlayerTexture();
+    nebula->SetNebulaTexture();
 
     while (!WindowShouldClose())
     {
@@ -64,11 +68,13 @@ void GameManager::Play()
 
         player->Jump();
         player->DrawPlayer();
+        nebula->DrawNebula();
         EndDrawing();
 
     }
 
     UnloadTexture(player->GetScarfy());
+    UnloadTexture(nebula->GetNebula());
     CloseWindow();
 }
 

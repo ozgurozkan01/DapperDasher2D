@@ -27,3 +27,13 @@
 4988	5112	7043357976784304	_deps/raylib-build/raylib/external/glfw/src/libglfw3.a	5935de14b297c3b7
 4	350	7046571346637821	CMakeFiles/DapperDasher2D.dir/Player.cpp.obj	91b76147c9f4b71a
 6657	6787	7043357993536811	_deps/raylib-build/raylib/libraylib.a	73a43345f7a3cf1f
+4	114	7046609863838341	CMakeFiles/DapperDasher2D.dir/Nebula.cpp.obj	e51cb50841e9c87b
+19	542	7046609868094745	CMakeFiles/DapperDasher2D.dir/main.cpp.obj	627da98156a15ebd
+12	567	7046609868304629	CMakeFiles/DapperDasher2D.dir/Player.cpp.obj	91b76147c9f4b71a
+28	583	7046609868465721	CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj	24ba6c87f80c028
+583	969	7046609872341030	DapperDasher2D.exe	52e0d2d10d664a9b
+5	92	7046610455821084	CMakeFiles/DapperDasher2D.dir/Nebula.cpp.obj	e51cb50841e9c87b
+14	412	7046610459011394	CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj	24ba6c87f80c028
+412	752	7046610462327726	DapperDasher2D.exe	52e0d2d10d664a9b
+4	79	7046610674096749	CMakeFiles/DapperDasher2D.dir/Nebula.cpp.obj	e51cb50841e9c87b
+80	286	7046610676132733	DapperDasher2D.exe	52e0d2d10d664a9b

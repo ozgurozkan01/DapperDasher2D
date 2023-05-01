@@ -7,6 +7,7 @@
 #include <iostream>
 
 class Player;
+class Nebula;
 
 class GameManager {
 
@@ -14,6 +15,7 @@ class GameManager {
     float gravity;
 
     Player* player;
+    Nebula* nebula;
 
 public:
 
