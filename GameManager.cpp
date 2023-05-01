@@ -9,7 +9,7 @@
 GameManager::GameManager() : windowHeight(300), windowWidth(400), gameName("Dapper Dasher 2D")
 {
     fps = 60;
-    gravity = 1;
+    gravity = 3250;
 
     player = new Player();
 }
@@ -26,7 +26,7 @@ void GameManager::SetGameFPS() const
 
 void GameManager::ApplyGravity(float& speed) const
 {
-    speed += gravity;
+    speed += (gravity * GetFrameTime());
 }
 
 void GameManager::Play()

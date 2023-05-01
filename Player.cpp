@@ -3,13 +3,13 @@
 //
 
 #include "Player.h"
+#include <iostream>
 
-
-Player::Player() : jumpSpeed(-17){}
+Player::Player() : jumpSpeed(-1000){}
 
 void Player::Jump()
 {
-    scarfyPosition.y += velocity;
+    scarfyPosition.y += (velocity * GetFrameTime());
 }
 
 void Player::DrawPlayer() const
@@ -40,7 +40,7 @@ void Player::SetPlayerTexture()
     scarfyRectangle.x = 0;
     scarfyRectangle.y = 0;
 
-    scarfyPosition.x = 400 / 2;
+    scarfyPosition.x = 200 - scarfyRectangle.width / 2;
     scarfyPosition.y = 300 - scarfy.height;
 }
 

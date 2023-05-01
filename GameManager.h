@@ -11,7 +11,7 @@ class Player;
 class GameManager {
 
     int fps;
-    int gravity;
+    float gravity;
 
     Player* player;
 
