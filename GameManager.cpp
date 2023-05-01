@@ -24,36 +24,44 @@ void GameManager::SetGameFPS() const
     SetTargetFPS(fps);
 }
 
-void GameManager::ApplyGravity(int& speed) const
+void GameManager::ApplyGravity(float& speed) const
 {
     speed += gravity;
 }
 
 void GameManager::Play()
 {
-    BeginDrawing();
-    ClearBackground(WHITE);
+    CreateGameWindow();
+    SetGameFPS();
+    player->SetPlayerTexture();
 
-    std::cout << player->positionY << std::endl;
-
-    if (!player->CheckIsOnGround())
+    while (!WindowShouldClose())
     {
-        ApplyGravity(player->jumpSpeed);
+        BeginDrawing();
+        ClearBackground(WHITE);
+
+        if (!player->CheckIsOnGround())
+        {
+            ApplyGravity(player->velocity);
+        }
+
+        else
+        {
+            player->UpdateJumpSpeed(0);
+        }
+
+        if (IsKeyPressed(KEY_SPACE) && player->CheckIsOnGround())
+        {
+            player->UpdateJumpSpeed(player->GetJumpSpeed());
+        }
+
+        player->Jump();
+        player->DrawPlayer();
+        EndDrawing();
     }
 
-    else
-    {
-        player->UpdateJumpSpeed(0);
-    }
-
-    if (IsKeyPressed(KEY_SPACE) && player->CheckIsOnGround())
-    {
-        player->UpdateJumpSpeed(-10);
-    }
-
-    player->Jump();
-    player->DrawPlayer();
-    EndDrawing();
+    UnloadTexture(player->GetScarfy());
+    CloseWindow();
 }
 
 GameManager::~GameManager()

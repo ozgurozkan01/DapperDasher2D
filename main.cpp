@@ -1,19 +1,11 @@
-#include "raylib.h"
 #include "GameManager.h"
 
 int main() {
 
     GameManager* gameManager = new GameManager;
 
-    gameManager->CreateGameWindow();
-    gameManager->SetGameFPS();
+    gameManager->Play();
 
-    while(!WindowShouldClose())
-    {
-        gameManager->Play();
-    }
-
-    CloseWindow();
-
+    delete gameManager;
     return 0;
 }

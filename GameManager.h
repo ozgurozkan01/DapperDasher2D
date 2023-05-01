@@ -24,7 +24,7 @@ public:
     GameManager();
     ~GameManager();
 
-    void ApplyGravity(int& speed) const;
+    void ApplyGravity(float& speed) const;
     void CreateGameWindow() const;
     void SetGameFPS() const;
     void Play();

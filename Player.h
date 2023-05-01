@@ -4,21 +4,28 @@
 
 #ifndef MAIN_CPP_PLAYER_H
 #define MAIN_CPP_PLAYER_H
-
+#include "raylib.h"
 
 class Player{
 
+private:
+    const float jumpSpeed;
+    Vector2 scarfyPosition;
+    Rectangle scarfyRectangle;
+    Texture2D scarfy;
+
 public:
 
-    int positionX;
-    int positionY;
-    int jumpSpeed;
+    float velocity;
 
     Player();
 
+    Texture2D GetScarfy() const;
+    float GetJumpSpeed() const;
+    void SetPlayerTexture();
     void DrawPlayer() const;
     void Jump();
-    void UpdateJumpSpeed(int newSpeed);
+    void UpdateJumpSpeed(float newSpeed);
     bool CheckIsOnGround() const;
 };
 
