@@ -5,7 +5,6 @@
 #ifndef MAIN_CPP_PLAYER_H
 #define MAIN_CPP_PLAYER_H
 #include "raylib.h"
-
 class Player{
 
 private:
@@ -17,6 +16,7 @@ private:
 
     float runningTime;
     float animationUpdateTime;
+
 public:
 
     float velocity;

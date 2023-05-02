@@ -3,13 +3,13 @@
 //
 
 #include "Player.h"
-#include <iostream>
+#include "GameManager.h"
 
-Player::Player() : jumpSpeed(-1000)
+Player::Player() : jumpSpeed(-1200)
 {
     frame = 0;
     runningTime = 0;
-    animationUpdateTime = 1.f / 6.f;
+    animationUpdateTime = 1.f / 10.f;
 }
 
 void Player::Jump()
@@ -29,7 +29,7 @@ void Player::UpdateJumpSpeed(float newSpeed)
 
 bool Player::CheckIsOnGround() const
 {
-    return scarfyPosition.y >= 300 - scarfy.height;
+    return scarfyPosition.y >= GameManager::windowHeight - scarfy.height;
 }
 
 Texture2D Player::GetScarfy() const
@@ -41,7 +41,7 @@ void Player::SetPlayerTexture()
 {
     scarfy = LoadTexture("textures/scarfy.png");
     scarfyRectangle = {0.f, 0.f, (float)scarfy.width / 6,(float)scarfy.height};
-    scarfyPosition = {200.f - scarfyRectangle.width / 2, 300.f - scarfy.height};
+    scarfyPosition = {(GameManager::windowWidth / 2) - scarfyRectangle.width / 2, GameManager::windowHeight - scarfyRectangle.height};
 }
 
 float Player::GetJumpSpeed() const

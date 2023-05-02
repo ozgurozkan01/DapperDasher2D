@@ -19,8 +19,8 @@ class GameManager {
 
 public:
 
-    const int windowHeight;
-    const int windowWidth;
+    const static int windowHeight = 380;
+    const static int windowWidth = 512;
     const char* gameName;
 
     GameManager();

@@ -7,7 +7,7 @@
 #include "Player.h"
 #include "Nebula.h"
 
-GameManager::GameManager() : windowHeight(300), windowWidth(400), gameName("Dapper Dasher 2D")
+GameManager::GameManager() : gameName("Dapper Dasher 2D")
 {
     fps = 60;
     gravity = 3250;
@@ -62,7 +62,7 @@ void GameManager::Play()
         player->CalculateRunningTime();
         nebula->CalculateRunningTime();
 
-        if (player->CanUpdateAnimate())
+        if (player->CanUpdateAnimate() && player->CheckIsOnGround())
         {
             player->AnimateScarfy();
         }

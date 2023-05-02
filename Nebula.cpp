@@ -4,21 +4,21 @@
 
 #include "Nebula.h"
 #include "raylib.h"
-#include <iostream>
+#include "GameManager.h"
 
 Nebula::Nebula()
 {
-    frameCounterX = 0;
     frameCounterY = 0;
     runningTime = 0;
     animationUpdateTime = 1.f / 24.f;
+    nebulaSpeed = -300.f;
 }
 
 void Nebula::SetNebulaTexture()
 {
     nebula = LoadTexture("textures/12_nebula_spritesheet.png");
     nebulaRectangle = {0.f, 0.f, (float)nebula.width / 8, (float)nebula.height / 8};
-    nebulaPosition = {400 - nebulaRectangle.width, 300 - nebulaRectangle.height};
+    nebulaPosition = {GameManager::windowWidth - nebulaRectangle.width, GameManager::windowHeight - nebulaRectangle.height};
 }
 
 void Nebula::DrawNebula()
@@ -33,15 +33,17 @@ Texture2D Nebula::GetNebula()
 
 void Nebula::Move()
 {
-    nebulaPosition.x -= 1;
+    float deltaTime = GetFrameTime();
+    nebulaPosition.x += (nebulaSpeed * deltaTime);
 }
 
 void Nebula::AnimateNebula()
 {
     nebulaRectangle.x = frameCounterY * nebulaRectangle.width;
     frameCounterY++;
+    runningTime = 0.f;
 
-    if (frameCounterY > 8)
+    if (frameCounterY > 7)
     {
         frameCounterY = 0;
     }

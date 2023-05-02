@@ -12,12 +12,14 @@ class Nebula {
     Texture2D nebula;
     Vector2 nebulaPosition;
     Rectangle nebulaRectangle;
+    float nebulaSpeed;
 
-    int frameCounterX;
     int frameCounterY;
 
     float runningTime;
     float animationUpdateTime;
+
+    
 
 public:
 
