@@ -40,13 +40,8 @@ Texture2D Player::GetScarfy() const
 void Player::SetPlayerTexture()
 {
     scarfy = LoadTexture("textures/scarfy.png");
-    scarfyRectangle.height = (float)scarfy.height;
-    scarfyRectangle.width = (float)scarfy.width / 6;
-    scarfyRectangle.x = 0;
-    scarfyRectangle.y = 0;
-
-    scarfyPosition.x = 200 - scarfyRectangle.width / 2;
-    scarfyPosition.y = 300 - scarfy.height;
+    scarfyRectangle = {0.f, 0.f, (float)scarfy.width / 6,(float)scarfy.height};
+    scarfyPosition = {200.f - scarfyRectangle.width / 2, 300.f - scarfy.height};
 }
 
 float Player::GetJumpSpeed() const
@@ -73,6 +68,7 @@ bool Player::CanUpdateAnimate() const
 
 void Player::CalculateRunningTime()
 {
-    runningTime += GetFrameTime();
+    float deltaTime = GetFrameTime();
+    runningTime += deltaTime;
 }
 

@@ -10,14 +10,26 @@
 class Nebula {
 
     Texture2D nebula;
-    Vector2 nebulaPos;
+    Vector2 nebulaPosition;
     Rectangle nebulaRectangle;
 
+    int frameCounterX;
+    int frameCounterY;
+
+    float runningTime;
+    float animationUpdateTime;
+
 public:
+
+    Nebula();
 
     Texture2D GetNebula();
     void SetNebulaTexture();
     void DrawNebula();
+    void Move();
+    void AnimateNebula();
+    void CalculateRunningTime();
+    bool CanUpdateAnimate() const;
 };
 
 

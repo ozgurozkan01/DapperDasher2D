@@ -60,13 +60,21 @@ void GameManager::Play()
         }
 
         player->CalculateRunningTime();
+        nebula->CalculateRunningTime();
 
         if (player->CanUpdateAnimate())
         {
             player->AnimateScarfy();
         }
 
+        if (nebula->CanUpdateAnimate())
+        {
+            nebula->AnimateNebula();
+        }
+
         player->Jump();
+        nebula->Move();
+
         player->DrawPlayer();
         nebula->DrawNebula();
         EndDrawing();
