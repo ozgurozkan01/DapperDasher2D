@@ -9,16 +9,7 @@
 
 class Nebula : public Actor{
 
-/*    Texture2D nebula;
-    Vector2 nebulaPosition;
-    Rectangle nebulaRectangle;
-
-    int frameCounterY;
-
-    float runningTime;*/
     const float nebulaSpeed;
-
-    
 
 public:
 

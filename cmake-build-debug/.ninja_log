@@ -63,3 +63,8 @@
 21	665	7048619435566515	CMakeFiles/DapperDasher2D.dir/Actor.cpp.obj	5ca5d955014670e
 30	676	7048619435676567	CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj	24ba6c87f80c028
 677	1033	7048619439206453	DapperDasher2D.exe	2d754fcb6d679e94
+4	452	7048661871220091	CMakeFiles/DapperDasher2D.dir/Player.cpp.obj	91b76147c9f4b71a
+20	473	7048661871418046	CMakeFiles/DapperDasher2D.dir/Nebula.cpp.obj	e51cb50841e9c87b
+13	479	7048661871508363	CMakeFiles/DapperDasher2D.dir/Actor.cpp.obj	5ca5d955014670e
+29	491	7048661871624146	CMakeFiles/DapperDasher2D.dir/GameManager.cpp.obj	24ba6c87f80c028
+492	744	7048661874128748	DapperDasher2D.exe	2d754fcb6d679e94

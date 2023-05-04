@@ -10,12 +10,7 @@
 class Player : public Actor{
 
 private:
-/*    Vector2 scarfyPosition;
-    Rectangle scarfyRectangle;
-    Texture2D scarfy;
-    float frame;
 
-    float runningTime;*/
     const float jumpSpeed;
 
 public:
