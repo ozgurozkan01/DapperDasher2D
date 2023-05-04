@@ -5,33 +5,27 @@
 #ifndef MAIN_CPP_NEBULA_H
 #define MAIN_CPP_NEBULA_H
 #include "raylib.h"
+#include "Actor.h"
 
+class Nebula : public Actor{
 
-class Nebula {
-
-    Texture2D nebula;
+/*    Texture2D nebula;
     Vector2 nebulaPosition;
     Rectangle nebulaRectangle;
-    float nebulaSpeed;
 
     int frameCounterY;
 
-    float runningTime;
-    float animationUpdateTime;
+    float runningTime;*/
+    const float nebulaSpeed;
 
     
 
 public:
 
-    Nebula();
+    Nebula(float animationUpdateTime);
 
-    Texture2D GetNebula();
-    void SetNebulaTexture();
-    void DrawNebula();
     void Move();
-    void AnimateNebula();
-    void CalculateRunningTime();
-    bool CanUpdateAnimate() const;
+    void SetMebulaTexturePosition(int spriteAmount);
 };
 
 

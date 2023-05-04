@@ -6,56 +6,17 @@
 #include "raylib.h"
 #include "GameManager.h"
 
-Nebula::Nebula()
-{
-    frameCounterY = 0;
-    runningTime = 0;
-    animationUpdateTime = 1.f / 24.f;
-    nebulaSpeed = -300.f;
-}
-
-void Nebula::SetNebulaTexture()
-{
-    nebula = LoadTexture("textures/12_nebula_spritesheet.png");
-    nebulaRectangle = {0.f, 0.f, (float)nebula.width / 8, (float)nebula.height / 8};
-    nebulaPosition = {GameManager::windowWidth - nebulaRectangle.width, GameManager::windowHeight - nebulaRectangle.height};
-}
-
-void Nebula::DrawNebula()
-{
-    DrawTextureRec(nebula, nebulaRectangle, nebulaPosition, WHITE);
-}
-
-Texture2D Nebula::GetNebula()
-{
-    return nebula;
-}
+Nebula::Nebula(float animationUpdateTime) : Actor(animationUpdateTime), nebulaSpeed(-300.f)
+{}
 
 void Nebula::Move()
 {
     float deltaTime = GetFrameTime();
-    nebulaPosition.x += (nebulaSpeed * deltaTime);
+    position.x += (nebulaSpeed * deltaTime);
 }
 
-void Nebula::AnimateNebula()
+void Nebula::SetMebulaTexturePosition(int spriteAmount)
 {
-    nebulaRectangle.x = frameCounterY * nebulaRectangle.width;
-    frameCounterY++;
-    runningTime = 0.f;
-
-    if (frameCounterY > 7)
-    {
-        frameCounterY = 0;
-    }
-
-}
-
-void Nebula::CalculateRunningTime()
-{
-    runningTime += GetFrameTime();
-}
-
-bool Nebula::CanUpdateAnimate() const
-{
-    return runningTime >= animationUpdateTime;
+    rectangle = {0.f, 0.f, (float)actorTexture.width / spriteAmount,(float)actorTexture.height / 8};
+    position = {GameManager::windowWidth - rectangle.width, GameManager::windowHeight - rectangle.height};
 }

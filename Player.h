@@ -5,34 +5,30 @@
 #ifndef MAIN_CPP_PLAYER_H
 #define MAIN_CPP_PLAYER_H
 #include "raylib.h"
-class Player{
+#include "Actor.h"
+
+class Player : public Actor{
 
 private:
-    const float jumpSpeed;
-    Vector2 scarfyPosition;
+/*    Vector2 scarfyPosition;
     Rectangle scarfyRectangle;
     Texture2D scarfy;
     float frame;
 
-    float runningTime;
-    float animationUpdateTime;
+    float runningTime;*/
+    const float jumpSpeed;
 
 public:
 
     float velocity;
 
-    Player();
+    Player(float animationUpdateTime);
 
-    Texture2D GetScarfy() const;
+    void SetPlayerTexturePosition(int spriteAmount);
     float GetJumpSpeed() const;
-    void SetPlayerTexture();
-    void DrawPlayer() const;
     void Jump();
     void UpdateJumpSpeed(float newSpeed);
     bool CheckIsOnGround() const;
-    void AnimateScarfy();
-    void CalculateRunningTime();
-    bool CanUpdateAnimate() const;
 };
 
 

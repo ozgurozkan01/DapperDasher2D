@@ -12,8 +12,8 @@ GameManager::GameManager() : gameName("Dapper Dasher 2D")
     fps = 60;
     gravity = 3250;
 
-    player = new Player();
-    nebula = new Nebula();
+    player = new Player(1.f / 12.f);
+    nebula = new Nebula(1.f / 12.f);
 }
 
 void GameManager::CreateGameWindow() const
@@ -36,8 +36,11 @@ void GameManager::Play()
     CreateGameWindow();
     SetGameFPS();
 
-    player->SetPlayerTexture();
-    nebula->SetNebulaTexture();
+    player->LoadActorTexture("textures/scarfy.png");
+    player->SetPlayerTexturePosition(6);
+
+    nebula->LoadActorTexture("textures/12_nebula_spritesheet.png");
+    nebula->SetMebulaTexturePosition(8);
 
     while (!WindowShouldClose())
     {
@@ -64,25 +67,25 @@ void GameManager::Play()
 
         if (player->CanUpdateAnimate() && player->CheckIsOnGround())
         {
-            player->AnimateScarfy();
+            player->AnimateActor(6);
         }
 
         if (nebula->CanUpdateAnimate())
         {
-            nebula->AnimateNebula();
+            nebula->AnimateActor(8);
         }
 
         player->Jump();
         nebula->Move();
 
-        player->DrawPlayer();
-        nebula->DrawNebula();
+        player->DrawActor();
+        nebula->DrawActor();
         EndDrawing();
 
     }
 
-    UnloadTexture(player->GetScarfy());
-    UnloadTexture(nebula->GetNebula());
+    UnloadTexture(player->GetActor());
+    UnloadTexture(nebula->GetActor());
     CloseWindow();
 }
 

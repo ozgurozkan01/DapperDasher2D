@@ -5,21 +5,13 @@
 #include "Player.h"
 #include "GameManager.h"
 
-Player::Player() : jumpSpeed(-1200)
-{
-    frame = 0;
-    runningTime = 0;
-    animationUpdateTime = 1.f / 10.f;
-}
+Player::Player(float animationUpdateTime) : Actor(animationUpdateTime), jumpSpeed(-1200)
+{}
 
 void Player::Jump()
 {
-    scarfyPosition.y += (velocity * GetFrameTime());
-}
-
-void Player::DrawPlayer() const
-{
-    DrawTextureRec(scarfy, scarfyRectangle,scarfyPosition, WHITE);
+    float deltaTime = GetFrameTime();
+    position.y += (velocity * deltaTime);
 }
 
 void Player::UpdateJumpSpeed(float newSpeed)
@@ -29,19 +21,7 @@ void Player::UpdateJumpSpeed(float newSpeed)
 
 bool Player::CheckIsOnGround() const
 {
-    return scarfyPosition.y >= GameManager::windowHeight - scarfy.height;
-}
-
-Texture2D Player::GetScarfy() const
-{
-    return scarfy;
-}
-
-void Player::SetPlayerTexture()
-{
-    scarfy = LoadTexture("textures/scarfy.png");
-    scarfyRectangle = {0.f, 0.f, (float)scarfy.width / 6,(float)scarfy.height};
-    scarfyPosition = {(GameManager::windowWidth / 2) - scarfyRectangle.width / 2, GameManager::windowHeight - scarfyRectangle.height};
+    return position.y >= GameManager::windowHeight - actorTexture.height;
 }
 
 float Player::GetJumpSpeed() const
@@ -49,26 +29,10 @@ float Player::GetJumpSpeed() const
     return jumpSpeed;
 }
 
-void Player::AnimateScarfy()
+void Player::SetPlayerTexturePosition(int spriteAmount)
 {
-    scarfyRectangle.x = frame * scarfyRectangle.width;
-    frame++;
-    runningTime = 0.f;
-
-    if (frame > 5)
-    {
-        frame = 0;
-    }
+    rectangle = {0.f, 0.f, (float)actorTexture.width / spriteAmount,(float)actorTexture.height};
+    position = {((float)GameManager::windowWidth / 2) - rectangle.width / 2, GameManager::windowHeight - rectangle.height};
 }
 
-bool Player::CanUpdateAnimate() const
-{
-    return runningTime >= animationUpdateTime;
-}
-
-void Player::CalculateRunningTime()
-{
-    float deltaTime = GetFrameTime();
-    runningTime += deltaTime;
-}
 
