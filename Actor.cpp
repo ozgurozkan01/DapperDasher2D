@@ -9,9 +9,10 @@ Actor::Actor(float animationUpdateTime) {
     frame = 0;
     runningTime = 0;
     actorAnimationUpdateTime = animationUpdateTime;
+    fileName = "textures/scarfy.png";
 }
 
-void Actor::LoadActorTexture(const char *fileName) {
+void Actor::LoadActorTexture() {
     actorTexture = LoadTexture(fileName);
 }
 
@@ -43,3 +44,12 @@ void Actor::AnimateActor(int spriteAmount) {
     }
 }
 
+void Actor::SetTextureRectangle(float recX, float recY, float textureWidth, float textureHeight)
+{
+    rectangle = {recX, recY, textureWidth,textureHeight};
+}
+
+void Actor::SetTexturePosition(float positionX, float positionY)
+{
+    position = { positionX, positionY};
+}

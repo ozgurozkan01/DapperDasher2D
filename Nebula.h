@@ -10,13 +10,13 @@
 class Nebula : public Actor{
 
     const float nebulaSpeed;
-
 public:
 
-    Nebula(float animationUpdateTime);
+    float distanceSpace;
+
+    Nebula();
 
     void Move();
-    void SetMebulaTexturePosition(int spriteAmount);
 };
 
 

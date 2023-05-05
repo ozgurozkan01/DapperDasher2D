@@ -12,8 +12,12 @@ GameManager::GameManager() : gameName("Dapper Dasher 2D")
     fps = 60;
     gravity = 3250;
 
-    player = new Player(1.f / 12.f);
-    nebula = new Nebula(1.f / 12.f);
+    player = new Player();
+
+    for (int i = 0; i < nebulaeSize; ++i)
+    {
+        nebulae[i] = new Nebula;
+    }
 }
 
 void GameManager::CreateGameWindow() const
@@ -36,11 +40,25 @@ void GameManager::Play()
     CreateGameWindow();
     SetGameFPS();
 
-    player->LoadActorTexture("textures/scarfy.png");
-    player->SetPlayerTexturePosition(6);
+    player->LoadActorTexture();
+    player->SetTextureRectangle(0.f,
+                                0.f,
+                                (float)player->actorTexture.width / (float)player->spriteAmountOneLine,
+                                (float)player->actorTexture.height);
+    player->SetTexturePosition((windowWidth / 2.f) - player->rectangle.width / 2,
+                               windowHeight - player->rectangle.height);
 
-    nebula->LoadActorTexture("textures/12_nebula_spritesheet.png");
-    nebula->SetMebulaTexturePosition(8);
+    for (int i = 0; i < nebulaeSize; ++i)
+    {
+        nebulae[i]->LoadActorTexture();
+        nebulae[i]->SetTextureRectangle(0.f,
+                                        0.f,
+                                        (float)nebulae[i]->actorTexture.width / (float)nebulae[i]->spriteAmountOneLine,
+                                        (float)nebulae[i]->actorTexture.height / (float)nebulae[i]->spriteAmountOneLine);
+        nebulae[i]->SetTexturePosition((windowWidth - nebulae[i]->rectangle.width) + (nebulae[i]->distanceSpace * i),
+                                       windowHeight - nebulae[i]->rectangle.height);
+    }
+
 
     while (!WindowShouldClose())
     {
@@ -63,29 +81,49 @@ void GameManager::Play()
         }
 
         player->CalculateRunningTime();
-        nebula->CalculateRunningTime();
+
+        for (int i = 0; i < nebulaeSize; ++i)
+        {
+            nebulae[i]->CalculateRunningTime();
+        }
 
         if (player->CanUpdateAnimate() && player->CheckIsOnGround())
         {
             player->AnimateActor(6);
         }
 
-        if (nebula->CanUpdateAnimate())
+        for (int i = 0; i < nebulaeSize; ++i)
         {
-            nebula->AnimateActor(8);
+            if (nebulae[i]->CanUpdateAnimate())
+            {
+                nebulae[i]->AnimateActor(8);
+            }
         }
 
         player->Jump();
-        nebula->Move();
+
+        for (int i = 0; i < nebulaeSize; ++i)
+        {
+            nebulae[i]->Move();
+        }
 
         player->DrawActor();
-        nebula->DrawActor();
+
+        for (int i = 0; i < nebulaeSize; ++i)
+        {
+            nebulae[i]->DrawActor();
+        }
         EndDrawing();
 
     }
 
     UnloadTexture(player->GetActor());
-    UnloadTexture(nebula->GetActor());
+
+    for (int i = 0; i < nebulaeSize; ++i)
+    {
+        UnloadTexture(nebulae[i]->GetActor());
+    }
+
     CloseWindow();
 }
 

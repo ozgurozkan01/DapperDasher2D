@@ -17,9 +17,8 @@ public:
 
     float velocity;
 
-    Player(float animationUpdateTime);
+    Player();
 
-    void SetPlayerTexturePosition(int spriteAmount);
     float GetJumpSpeed() const;
     void Jump();
     void UpdateJumpSpeed(float newSpeed);

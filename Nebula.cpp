@@ -6,8 +6,12 @@
 #include "raylib.h"
 #include "GameManager.h"
 
-Nebula::Nebula(float animationUpdateTime) : Actor(animationUpdateTime), nebulaSpeed(-300.f)
-{}
+Nebula::Nebula() : Actor(1.f / 12.f), nebulaSpeed(-300.f)
+{
+    distanceSpace = 300.f;
+    spriteAmountOneLine = 8;
+    fileName = "textures/12_nebula_spritesheet.png";
+}
 
 void Nebula::Move()
 {
@@ -15,8 +19,10 @@ void Nebula::Move()
     position.x += (nebulaSpeed * deltaTime);
 }
 
-void Nebula::SetMebulaTexturePosition(int spriteAmount)
+/*
+void Nebula::SetTextureProperties(int spriteAmount)
 {
-    rectangle = {0.f, 0.f, (float)actorTexture.width / spriteAmount,(float)actorTexture.height / 8};
-    position = {GameManager::windowWidth - rectangle.width, GameManager::windowHeight - rectangle.height};
+    rectangle = {0.f, 0.f, (float)actorTexture.width / spriteAmount,(float)actorTexture.height / spriteAmount};
+    position = {(GameManager::windowWidth - rectangle.width) + distanceSpace, GameManager::windowHeight - rectangle.height};
 }
+*/

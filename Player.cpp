@@ -5,8 +5,10 @@
 #include "Player.h"
 #include "GameManager.h"
 
-Player::Player(float animationUpdateTime) : Actor(animationUpdateTime), jumpSpeed(-1200)
-{}
+Player::Player() : Actor(1.f / 12.f), jumpSpeed(-1200)
+{
+    spriteAmountOneLine = 6;
+}
 
 void Player::Jump()
 {
@@ -28,11 +30,13 @@ float Player::GetJumpSpeed() const
 {
     return jumpSpeed;
 }
+/*
 
 void Player::SetPlayerTexturePosition(int spriteAmount)
 {
     rectangle = {0.f, 0.f, (float)actorTexture.width / spriteAmount,(float)actorTexture.height};
     position = {((float)GameManager::windowWidth / 2) - rectangle.width / 2, GameManager::windowHeight - rectangle.height};
 }
+*/
 
 
