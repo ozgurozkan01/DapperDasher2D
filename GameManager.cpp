@@ -141,10 +141,10 @@ void GameManager::Play()
             }
         }
 
-/*        else
+        else
         {
             GameOver();
-        }*/
+        }
         EndDrawing();
     }
 
@@ -163,9 +163,7 @@ GameManager::~GameManager()
     delete player;
 }
 
-/*
 void GameManager::GameOver()
 {
     DrawText("Game Over", windowWidth / 2 - 50, windowHeight / 2, 25, RED);
 }
-*/

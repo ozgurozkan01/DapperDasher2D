@@ -30,7 +30,7 @@ public:
     void CreateGameWindow() const;
     void SetGameFPS() const;
     void Play();
-    //void GameOver();
+    void GameOver();
 };
 
 
