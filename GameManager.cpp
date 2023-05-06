@@ -116,7 +116,7 @@ void GameManager::Play()
                 nebulae[i]->Move();
             }
 
-            //background->DrawBackGround();
+            background->DrawBackGround();
             player->DrawActor();
 
             for (int i = 0; i < nebulaeSize; ++i)

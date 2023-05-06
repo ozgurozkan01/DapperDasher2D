@@ -24,7 +24,7 @@ void Background::LoadBackgroundTextures()
     upGroundPosition2 = {upGroundPosition.x + (float)upGround.width * 2, 0.f};
 }
 
-/*void Background::DrawBackGround()
+void Background::DrawBackGround()
 {
     DrawTextureEx(bottomGround, bottomgroundPosition, 0, 2, WHITE);
     DrawTextureEx(bottomGround, bottomgroundPosition2, 0, 2, WHITE);
@@ -34,7 +34,7 @@ void Background::LoadBackgroundTextures()
 
     DrawTextureEx(upGround, upGroundPosition, 0, 2, WHITE);
     DrawTextureEx(upGround, upGroundPosition2, 0, 2, WHITE);
-}*/
+}
 
 void Background::UnloadBackgroundTextures()
 {
