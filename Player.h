@@ -17,6 +17,9 @@ private:
     float changingColorTimeLimit;
     int colorUpdateAmount;
     int colorUpdateTimeLimit;
+
+    Texture2D healthTexture;
+
 public:
 
     bool isColorChangable;
@@ -36,6 +39,9 @@ public:
     void TakeDamage();
     void UpdateColor();
     bool IsAlive();
+/*    void LoadHealthTexture();
+    void DrawHealthTexture();
+    Texture2D GetHealthTexture();*/
 };
 
 

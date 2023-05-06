@@ -33,7 +33,7 @@ public:
     void LoadBackgroundTextures();
     void UnloadBackgroundTextures();
     void DrawBackGround();
-    //void MoveBackground();
+    void MoveBackground();
 };
 
 

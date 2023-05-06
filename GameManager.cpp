@@ -53,6 +53,8 @@ void GameManager::Play()
     player->SetTexturePosition((windowWidth / 2.f) - player->rectangle.width / 2,
                                windowHeight - player->rectangle.height);
 
+    //player->LoadHealthTexture();
+
     for (int i = 0; i < nebulaeSize; ++i)
     {
         nebulae[i]->LoadActorTexture();
@@ -65,6 +67,7 @@ void GameManager::Play()
     }
 
     background->LoadBackgroundTextures();
+
 
     while (!WindowShouldClose())
     {
@@ -108,7 +111,7 @@ void GameManager::Play()
                 }
             }
 
-           //background->MoveBackground();
+            background->MoveBackground();
             player->Jump();
 
             for (int i = 0; i < nebulaeSize; ++i)
@@ -124,6 +127,7 @@ void GameManager::Play()
                 nebulae[i]->DrawActor();
             }
 
+            //player->DrawHealthTexture();
 
             for (int i = 0; i < nebulaeSize && !player->isDamageTaken; ++i)
             {
@@ -172,7 +176,7 @@ void GameManager::Play()
     }
 
     background->UnloadBackgroundTextures();
-
+    //UnloadTexture(player->GetHealthTexture());
     CloseWindow();
 }
 

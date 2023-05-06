@@ -6,9 +6,9 @@
 
 void Background::LoadBackgroundTextures()
 {
-    bottomgroundMovementSpeed = 20.f;
-    middlegroundMovementSpeed = 40.f;
-    upgroundMovementSpeed = 80.f;
+    bottomgroundMovementSpeed = 30.f;
+    middlegroundMovementSpeed = 50.f;
+    upgroundMovementSpeed = 100.f;
 
     bottomGround = LoadTexture("textures/far-buildings.png");
     middleGround = LoadTexture("textures/back-buildings.png");
@@ -48,7 +48,7 @@ void Background::UnloadBackgroundTextures()
     UnloadTexture(upGround);
 }
 
-/*void Background::MoveBackground()
+void Background::MoveBackground()
 {
     float deltaTime = GetFrameTime();
     bottomgroundPosition.x -= bottomgroundMovementSpeed * deltaTime;
@@ -74,4 +74,4 @@ void Background::UnloadBackgroundTextures()
     {
         upGroundPosition.x = 0.f;
     }
-}*/
+}
