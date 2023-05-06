@@ -37,12 +37,9 @@ float Player::GetJumpSpeed() const
     return jumpSpeed;
 }
 
-bool Player::IsDamageTaken(Actor* nebula)
+bool Player::CheckCollision(Actor* nebula)
 {
-    actorCenter = {position.x + rectangle.width / 2, position.y - rectangle.height / 2};
-    nebula->actorCenter = {nebula->position.x + nebula->rectangle.width / 2, nebula->position.y - nebula->rectangle.height / 2};
-
-    return (abs(nebula->actorCenter.x - actorCenter.x) <= rectangle.width / 2) && (abs(nebula->actorCenter.y - actorCenter.y) <= rectangle.height / 2);
+    return (abs(nebula->position.x - position.x) <= rectangle.width / 2) && (abs(nebula->position.y - position.y) <= rectangle.height / 2);
 }
 
 void Player::TakeDamage()

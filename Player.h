@@ -35,7 +35,7 @@ public:
     void UpdateJumpSpeed(float newSpeed);
     bool CheckIsOnGround() const;
     Color DetermineColor();
-    bool IsDamageTaken(Actor* nebula);
+    bool CheckCollision(Actor* nebula);
     void TakeDamage();
     void UpdateColor();
     bool IsAlive();

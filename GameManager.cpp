@@ -131,7 +131,7 @@ void GameManager::Play()
 
             for (int i = 0; i < nebulaeSize && !player->isDamageTaken; ++i)
             {
-                if (player->IsDamageTaken(nebulae[i]))
+                if (player->CheckCollision(nebulae[i]))
                 {
                     player->TakeDamage();
                     player->isColorChangable = true;
