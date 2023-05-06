@@ -124,7 +124,7 @@ void GameManager::Play()
             {
                 if (player->IsDamageTaken(nebulae[i]))
                 {
-                    //player->TakeDamage();
+                    player->TakeDamage();
                     player->isColorChangable = true;
                     player->isDamageTaken = true;
                     //nebulae[i]->position.x = nebulae[nebulaeSize-1]->position.x + nebulae[i]->distanceSpace;

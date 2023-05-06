@@ -45,12 +45,10 @@ bool Player::IsDamageTaken(Actor* nebula)
     return (abs(nebula->actorCenter.x - actorCenter.x) <= rectangle.width / 2) && (abs(nebula->actorCenter.y - actorCenter.y) <= rectangle.height / 2);
 }
 
-/*
 void Player::TakeDamage()
 {
     health--;
 }
-*/
 
 Color Player::DetermineColor()
 {
@@ -78,9 +76,8 @@ void Player::UpdateColor()
     float deltaTime = GetFrameTime();
     changingColorFrameCounter += deltaTime;
 }
-/*
 
 bool Player::IsAlive()
 {
     return health > 0;
-}*/
+}

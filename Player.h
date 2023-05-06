@@ -33,9 +33,9 @@ public:
     bool CheckIsOnGround() const;
     Color DetermineColor();
     bool IsDamageTaken(Actor* nebula);
-    //void TakeDamage();
+    void TakeDamage();
     void UpdateColor();
-    //bool IsAlive();
+    bool IsAlive();
 };
 
 
