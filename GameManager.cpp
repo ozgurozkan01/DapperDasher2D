@@ -6,6 +6,7 @@
 #include "raylib.h"
 #include "Player.h"
 #include "Nebula.h"
+#include "Background.h"
 
 GameManager::GameManager() : gameName("Dapper Dasher 2D")
 {
@@ -20,6 +21,8 @@ GameManager::GameManager() : gameName("Dapper Dasher 2D")
     }
 
     lastNebula = nebulae[nebulaeSize-1];
+
+    background = new Background();
 }
 
 void GameManager::CreateGameWindow() const
@@ -61,6 +64,7 @@ void GameManager::Play()
                                        windowHeight - nebulae[i]->rectangle.height);
     }
 
+    background->LoadBackgroundTextures();
 
     while (!WindowShouldClose())
     {
@@ -104,6 +108,7 @@ void GameManager::Play()
                 }
             }
 
+           //background->MoveBackground();
             player->Jump();
 
             for (int i = 0; i < nebulaeSize; ++i)
@@ -111,7 +116,7 @@ void GameManager::Play()
                 nebulae[i]->Move();
             }
 
-
+            //background->DrawBackGround();
             player->DrawActor();
 
             for (int i = 0; i < nebulaeSize; ++i)
@@ -149,7 +154,6 @@ void GameManager::Play()
                     lastNebula = nebulae[i];
                 }
             }
-
         }
 
         else
@@ -167,7 +171,7 @@ void GameManager::Play()
         UnloadTexture(nebulae[i]->GetActor());
     }
 
-
+    background->UnloadBackgroundTextures();
 
     CloseWindow();
 }

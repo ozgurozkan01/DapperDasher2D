@@ -8,6 +8,7 @@
 
 class Player;
 class Nebula;
+class Background;
 
 class GameManager {
 
@@ -18,6 +19,7 @@ class GameManager {
     static const int nebulaeSize = 5;
     Nebula* nebulae[nebulaeSize];
     Nebula* lastNebula;
+    Background* background;
 
 public:
 
