@@ -127,7 +127,7 @@ void GameManager::Play()
                     player->TakeDamage();
                     player->isColorChangable = true;
                     player->isDamageTaken = true;
-                    //nebulae[i]->position.x = nebulae[nebulaeSize-1]->position.x + nebulae[i]->distanceSpace;
+                    nebulae[i]->position.x = nebulae[nebulaeSize-1]->position.x + nebulae[i]->distanceSpace;
                     std::cout << player->health << std::endl;
                     break;
                 }

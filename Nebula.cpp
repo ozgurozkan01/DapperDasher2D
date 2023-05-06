@@ -13,7 +13,7 @@ Nebula::Nebula() : Actor(1.f / 12.f, 8), nebulaSpeed(-300.f)
 }
 
 void Nebula::Move()
-{
+{ 
     float deltaTime = GetFrameTime();
     position.x += (nebulaSpeed * deltaTime);
 }
