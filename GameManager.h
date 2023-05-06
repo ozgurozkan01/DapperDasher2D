@@ -15,9 +15,12 @@ class GameManager {
     float gravity;
 
     Player* player;
-    static const int nebulaeSize = 15;
+    static const int nebulaeSize = 5;
     Nebula* nebulae[nebulaeSize];
+    Nebula* lastNebula;
+
 public:
+
 
     const static int windowHeight = 380;
     const static int windowWidth = 512;

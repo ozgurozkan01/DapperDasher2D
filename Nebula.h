@@ -16,7 +16,7 @@ public:
     float distanceSpace;
 
     Nebula();
-
+    void UpdateNebulaPositionX(Nebula* lastNebula);
     void Move();
 };
 

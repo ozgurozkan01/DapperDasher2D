@@ -18,6 +18,8 @@ GameManager::GameManager() : gameName("Dapper Dasher 2D")
     {
         nebulae[i] = new Nebula;
     }
+
+    lastNebula = nebulae[nebulaeSize-1];
 }
 
 void GameManager::CreateGameWindow() const
@@ -55,7 +57,7 @@ void GameManager::Play()
                                         0.f,
                                         (float)nebulae[i]->actorTexture.width / (float)nebulae[i]->spriteAmountOneLine,
                                         (float)nebulae[i]->actorTexture.height / (float)nebulae[i]->spriteLineAmount);
-        nebulae[i]->SetTexturePosition((windowWidth - nebulae[i]->rectangle.width) + (nebulae[i]->distanceSpace + i * 400),
+        nebulae[i]->SetTexturePosition((windowWidth - nebulae[i]->rectangle.width) + (nebulae[i]->distanceSpace + i * nebulae[i]->distanceSpace),
                                        windowHeight - nebulae[i]->rectangle.height);
     }
 
@@ -102,8 +104,6 @@ void GameManager::Play()
                 }
             }
 
-
-
             player->Jump();
 
             for (int i = 0; i < nebulaeSize; ++i)
@@ -127,8 +127,8 @@ void GameManager::Play()
                     player->TakeDamage();
                     player->isColorChangable = true;
                     player->isDamageTaken = true;
-                    nebulae[i]->position.x = nebulae[nebulaeSize-1]->position.x + nebulae[i]->distanceSpace;
-                    std::cout << player->health << std::endl;
+                    nebulae[i]->UpdateNebulaPositionX(lastNebula);
+                    lastNebula = nebulae[i];
                     break;
                 }
             }
@@ -139,12 +139,24 @@ void GameManager::Play()
             {
                 player->UpdateColor();
             }
+
+            for (int i = 0; i < nebulaeSize; ++i)
+            {
+
+                if (nebulae[i]->position.x < -nebulae[i]->rectangle.width)
+                {
+                    nebulae[i]->UpdateNebulaPositionX(lastNebula);
+                    lastNebula = nebulae[i];
+                }
+            }
+
         }
 
         else
         {
             GameOver();
         }
+
         EndDrawing();
     }
 
@@ -154,6 +166,8 @@ void GameManager::Play()
     {
         UnloadTexture(nebulae[i]->GetActor());
     }
+
+
 
     CloseWindow();
 }
