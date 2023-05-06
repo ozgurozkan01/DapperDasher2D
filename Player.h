@@ -39,9 +39,9 @@ public:
     void TakeDamage();
     void UpdateColor();
     bool IsAlive();
-/*    void LoadHealthTexture();
-    void DrawHealthTexture();
-    Texture2D GetHealthTexture();*/
+    void LoadHealthTexture();
+    //void DrawHealthTexture();
+    Texture2D GetHealthTexture();
 };
 
 

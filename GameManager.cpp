@@ -53,7 +53,7 @@ void GameManager::Play()
     player->SetTexturePosition((windowWidth / 2.f) - player->rectangle.width / 2,
                                windowHeight - player->rectangle.height);
 
-    //player->LoadHealthTexture();
+    player->LoadHealthTexture();
 
     for (int i = 0; i < nebulaeSize; ++i)
     {
@@ -176,7 +176,7 @@ void GameManager::Play()
     }
 
     background->UnloadBackgroundTextures();
-    //UnloadTexture(player->GetHealthTexture());
+    UnloadTexture(player->GetHealthTexture());
     CloseWindow();
 }
 

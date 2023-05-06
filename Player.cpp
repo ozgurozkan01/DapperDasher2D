@@ -82,19 +82,19 @@ bool Player::IsAlive()
     return health > 0;
 }
 
-/*void Player::LoadHealthTexture()
+void Player::LoadHealthTexture()
 {
     healthTexture = LoadTexture("textures/heart.png");
 }
 
-void Player::DrawHealthTexture()
+/*void Player::DrawHealthTexture()
 {
     DrawTextureEx(healthTexture, {0.F, 10.F}, 0.F, 0.07f, WHITE);
     DrawTextureEx(healthTexture, {30.f, 10.F}, 0.F, 0.07f, WHITE);
     DrawTextureEx(healthTexture, {60.f, 10.F}, 0.F, 0.07f, WHITE);
-}
+}*/
 
 Texture2D Player::GetHealthTexture()
 {
     return healthTexture;
-}*/
+}
