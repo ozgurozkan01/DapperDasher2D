@@ -40,7 +40,7 @@ public:
     void UpdateColor();
     bool IsAlive();
     void LoadHealthTexture();
-    //void DrawHealthTexture();
+    void DrawHealthTexture();
     Texture2D GetHealthTexture();
 };
 

@@ -127,7 +127,7 @@ void GameManager::Play()
                 nebulae[i]->DrawActor();
             }
 
-            //player->DrawHealthTexture();
+            player->DrawHealthTexture();
 
             for (int i = 0; i < nebulaeSize && !player->isDamageTaken; ++i)
             {
