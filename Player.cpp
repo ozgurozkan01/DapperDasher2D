@@ -85,6 +85,7 @@ bool Player::IsAlive()
 void Player::LoadHealthTexture()
 {
     healthTexture = LoadTexture("textures/heart.png");
+    
 }
 
 /*void Player::DrawHealthTexture()
