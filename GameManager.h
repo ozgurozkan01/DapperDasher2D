@@ -15,7 +15,7 @@ class GameManager {
     float gravity;
 
     Player* player;
-    static const int nebulaeSize = 10;
+    static const int nebulaeSize = 15;
     Nebula* nebulae[nebulaeSize];
 public:
 
@@ -30,6 +30,7 @@ public:
     void CreateGameWindow() const;
     void SetGameFPS() const;
     void Play();
+    //void GameOver();
 };
 
 

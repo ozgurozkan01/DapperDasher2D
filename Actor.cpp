@@ -3,37 +3,46 @@
 //
 
 #include "Actor.h"
-#include "GameManager.h"
 
-Actor::Actor(float animationUpdateTime) {
+Actor::Actor(float animationUpdateTime, int spriteLineAmount)
+{
+    color = WHITE;
     frame = 0;
     runningTime = 0;
     actorAnimationUpdateTime = animationUpdateTime;
     fileName = "textures/scarfy.png";
+    this->spriteLineAmount = spriteLineAmount;
+    actorCenter = {0.f, 0.f};
 }
 
-void Actor::LoadActorTexture() {
+void Actor::LoadActorTexture()
+{
     actorTexture = LoadTexture(fileName);
 }
 
-Texture2D Actor::GetActor() {
+Texture2D Actor::GetActor()
+{
     return actorTexture;
 }
 
-void Actor::DrawActor() {
-    DrawTextureRec(actorTexture, rectangle,position, WHITE);
+void Actor::DrawActor()
+{
+    DrawTextureRec(actorTexture, rectangle,position, color);
 }
 
-void Actor::CalculateRunningTime() {
+void Actor::CalculateRunningTime()
+{
     float deltaTime = GetFrameTime();
     runningTime += deltaTime;
 }
 
-bool Actor::CanUpdateAnimate() const {
+bool Actor::CanUpdateAnimate() const
+{
     return runningTime >= actorAnimationUpdateTime;
 }
 
-void Actor::AnimateActor(int spriteAmount) {
+void Actor::AnimateActor(int spriteAmount)
+{
     rectangle.x = frame * rectangle.width;
     frame++;
     runningTime = 0.f;

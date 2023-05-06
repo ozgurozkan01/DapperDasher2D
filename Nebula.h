@@ -10,6 +10,7 @@
 class Nebula : public Actor{
 
     const float nebulaSpeed;
+
 public:
 
     float distanceSpace;

@@ -13,9 +13,17 @@ private:
 
     const float jumpSpeed;
 
+    float changingColorFrameCounter;
+    float changingColorTimeLimit;
+    int colorUpdateAmount;
+    int colorUpdateTimeLimit;
 public:
 
+    bool isColorChangable;
+    bool isDamageTaken;
+
     float velocity;
+    int health;
 
     Player();
 
@@ -23,6 +31,11 @@ public:
     void Jump();
     void UpdateJumpSpeed(float newSpeed);
     bool CheckIsOnGround() const;
+    Color DetermineColor();
+    bool IsDamageTaken(Actor* nebula);
+    //void TakeDamage();
+    void UpdateColor();
+    //bool IsAlive();
 };
 
 

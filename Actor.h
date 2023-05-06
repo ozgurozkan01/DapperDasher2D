@@ -10,19 +10,22 @@ class Actor {
 
 protected:
 
-    Vector2 position;
 
     float frame;
     float runningTime;
     float actorAnimationUpdateTime;
     const char *fileName;
+    Color color;
 public:
 
     Texture2D actorTexture;
     Rectangle rectangle;
+    Vector2 position;
+    Vector2 actorCenter;
 
     int spriteAmountOneLine;
-    explicit Actor(float animationUpdateTime);
+    int spriteLineAmount;
+    explicit Actor(float animationUpdateTime, int spriteLineAmount);
 
     void LoadActorTexture();
     void SetTextureRectangle(float recX, float recY, float textureWidth, float textureHeight);
