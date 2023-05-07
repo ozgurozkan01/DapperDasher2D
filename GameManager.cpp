@@ -51,7 +51,7 @@ void GameManager::Play()
                                 (float)player->actorTexture.width / (float)player->spriteAmountOneLine,
                                 (float)player->actorTexture.height / (float)player->spriteLineAmount);
     player->SetTexturePosition((windowWidth / 2.f) - player->rectangle.width / 2,
-                               windowHeight - player->rectangle.height);
+                               windowHeight - player->rectangle.height - 15.f);
 
     player->LoadHealthTexture();
 
@@ -63,14 +63,16 @@ void GameManager::Play()
                                         (float)nebulae[i]->actorTexture.width / (float)nebulae[i]->spriteAmountOneLine,
                                         (float)nebulae[i]->actorTexture.height / (float)nebulae[i]->spriteLineAmount);
         nebulae[i]->SetTexturePosition((windowWidth - nebulae[i]->rectangle.width) + (nebulae[i]->distanceSpace + i * nebulae[i]->distanceSpace),
-                                       windowHeight - nebulae[i]->rectangle.height);
+                                       windowHeight - nebulae[i]->rectangle.height - 15.f);
+
+        std::cout << nebulae[i]->actorGroundY << std::endl;
     }
 
     background->LoadBackgroundTextures();
 
-
     while (!WindowShouldClose())
     {
+
         BeginDrawing();
         ClearBackground(WHITE);
 
@@ -81,15 +83,22 @@ void GameManager::Play()
                 ApplyGravity(player->velocity);
             }
 
-            else
+/*            else
             {
-                player->UpdateJumpSpeed(0);
+                player->UpdateMovementSpeed(0);
             }
 
-            if (IsKeyPressed(KEY_SPACE) && player->CheckIsOnGround())
+            if (IsKeyPressed(KEY_W) && player->CheckIsOnGround())
             {
-                player->UpdateJumpSpeed(player->GetJumpSpeed());
+                player->UpdateMovementSpeed(player->GetMovementSpeed());
             }
+
+            if (IsKeyPressed(KEY_S) && !player->CheckIsOnGround())
+            {
+                player->UpdateMovementSpeed(-player->GetMovementSpeed());
+            }
+
+            player->Move();*/
 
             player->CalculateRunningTime();
 
@@ -111,13 +120,16 @@ void GameManager::Play()
                 }
             }
 
+
             background->MoveBackground();
-            player->Jump();
 
             for (int i = 0; i < nebulaeSize; ++i)
             {
                 nebulae[i]->Move();
+                nebulae[i]->IncreaseNebulaSpeedInTime();
             }
+
+            player->ArrangePlayerGroundPosition();
 
             background->DrawBackGround();
             player->DrawActor();

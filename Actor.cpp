@@ -4,7 +4,7 @@
 
 #include "Actor.h"
 
-Actor::Actor(float animationUpdateTime, int spriteLineAmount)
+Actor::Actor(float animationUpdateTime)
 {
     color = WHITE;
     frame = 0;
@@ -12,7 +12,6 @@ Actor::Actor(float animationUpdateTime, int spriteLineAmount)
     actorAnimationUpdateTime = animationUpdateTime;
     fileName = "textures/scarfy.png";
     this->spriteLineAmount = spriteLineAmount;
-    actorCenter = {0.f, 0.f};
 }
 
 void Actor::LoadActorTexture()
@@ -61,4 +60,5 @@ void Actor::SetTextureRectangle(float recX, float recY, float textureWidth, floa
 void Actor::SetTexturePosition(float positionX, float positionY)
 {
     position = { positionX, positionY};
+    actorGroundY = positionY;
 }

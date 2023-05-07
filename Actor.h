@@ -4,28 +4,31 @@
 
 #ifndef MAIN_CPP_ACTOR_H
 #define MAIN_CPP_ACTOR_H
+
 #include "raylib.h"
+#include "GameManager.h"
 
 class Actor {
 
 protected:
-
 
     float frame;
     float runningTime;
     float actorAnimationUpdateTime;
     const char *fileName;
     Color color;
+
+
 public:
 
+    float actorGroundY;
     Texture2D actorTexture;
     Rectangle rectangle;
     Vector2 position;
-    Vector2 actorCenter;
 
     int spriteAmountOneLine;
     int spriteLineAmount;
-    explicit Actor(float animationUpdateTime, int spriteLineAmount);
+    explicit Actor(float animationUpdateTime);
 
     void LoadActorTexture();
     void SetTextureRectangle(float recX, float recY, float textureWidth, float textureHeight);

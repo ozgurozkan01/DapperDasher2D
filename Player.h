@@ -11,7 +11,7 @@ class Player : public Actor{
 
 private:
 
-    const float jumpSpeed;
+    const float movementSpeed;
 
     float changingColorFrameCounter;
     float changingColorTimeLimit;
@@ -30,9 +30,9 @@ public:
 
     Player();
 
-    float GetJumpSpeed() const;
-    void Jump();
-    void UpdateJumpSpeed(float newSpeed);
+/*    float GetMovementSpeed() const;
+    void Move();
+    void UpdateMovementSpeed(float newSpeed);*/
     bool CheckIsOnGround() const;
     Color DetermineColor();
     bool CheckCollision(Actor* nebula);
@@ -42,6 +42,8 @@ public:
     void LoadHealthTexture();
     void DrawHealthTexture();
     Texture2D GetHealthTexture();
+    bool CheckPlayerPositionIsCorrect();
+    void ArrangePlayerGroundPosition();
 };
 
 

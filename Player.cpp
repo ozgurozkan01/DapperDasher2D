@@ -5,37 +5,40 @@
 #include "Player.h"
 #include "GameManager.h"
 
-Player::Player() : Actor(1.f / 12.f, 1), jumpSpeed(-1200)
+Player::Player() : Actor(1.f / 12.f), movementSpeed(-1200)
 {
     healthAmount = 5;
     spriteAmountOneLine = 6;
+    spriteLineAmount = 1;
     changingColorTimeLimit = 0.3f;
     changingColorFrameCounter = changingColorTimeLimit;
     colorUpdateTimeLimit = 8;
     isDamageTaken = false;
     isColorChangable = false;
 }
+/*
 
-void Player::Jump()
+void Player::Move()
 {
     float deltaTime = GetFrameTime();
     position.y += (velocity * deltaTime);
 }
 
-void Player::UpdateJumpSpeed(float newSpeed)
+void Player::UpdateMovementSpeed(float newSpeed)
 {
     velocity = newSpeed;
 }
 
 bool Player::CheckIsOnGround() const
 {
-    return position.y >= GameManager::windowHeight - actorTexture.height;
+    return position.y >= actorGroundY;
 }
 
-float Player::GetJumpSpeed() const
+float Player::GetMovementSpeed() const
 {
-    return jumpSpeed;
+    return movementSpeed;
 }
+*/
 
 bool Player::CheckCollision(Actor* nebula)
 {
@@ -95,4 +98,17 @@ void Player::DrawHealthTexture()
 Texture2D Player::GetHealthTexture()
 {
     return healthTexture;
+}
+
+bool Player::CheckPlayerPositionIsCorrect()
+{
+    return position.y > actorGroundY;
+}
+
+void Player::ArrangePlayerGroundPosition()
+{
+    if (CheckPlayerPositionIsCorrect())
+    {
+        position.y = actorGroundY;
+    }
 }

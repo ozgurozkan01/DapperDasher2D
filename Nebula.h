@@ -9,7 +9,7 @@
 
 class Nebula : public Actor{
 
-    const float nebulaSpeed;
+    float nebulaSpeed;
 
 public:
 
@@ -17,6 +17,7 @@ public:
 
     Nebula();
     void UpdateNebulaPositionX(Nebula* lastNebula);
+    void IncreaseNebulaSpeedInTime();
     void Move();
 };
 
