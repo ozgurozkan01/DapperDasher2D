@@ -24,7 +24,7 @@ endif()
 
 # Our Project
 
-add_executable(${PROJECT_NAME} main.cpp GameManager.cpp GameManager.h Player.cpp Player.h Nebula.cpp Nebula.h Actor.cpp Actor.h Background.cpp Background.h)
+add_executable(${PROJECT_NAME} main.cpp GameManager.cpp GameManager.h Player.cpp Player.h Nebula.cpp Nebula.h Actor.cpp Actor.h Background.cpp Background.h Coin.cpp Coin.h)
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 
