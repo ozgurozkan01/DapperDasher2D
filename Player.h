@@ -26,7 +26,7 @@ public:
     bool isDamageTaken;
 
     float velocity;
-    int health;
+    int healthAmount;
 
     Player();
 

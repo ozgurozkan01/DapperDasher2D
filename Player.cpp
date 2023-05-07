@@ -7,7 +7,7 @@
 
 Player::Player() : Actor(1.f / 12.f, 1), jumpSpeed(-1200)
 {
-    health = 3;
+    healthAmount = 5;
     spriteAmountOneLine = 6;
     changingColorTimeLimit = 0.3f;
     changingColorFrameCounter = changingColorTimeLimit;
@@ -39,12 +39,12 @@ float Player::GetJumpSpeed() const
 
 bool Player::CheckCollision(Actor* nebula)
 {
-    return (abs(nebula->position.x - position.x) <= rectangle.width / 1.5) && (abs(nebula->position.y - position.y) <= rectangle.height / 1.5);
+    return (abs(nebula->position.x - position.x) <= rectangle.width / 2) && (abs(nebula->position.y - position.y) <= rectangle.height / 2);
 }
 
 void Player::TakeDamage()
 {
-    health--;
+    healthAmount--;
 }
 
 Color Player::DetermineColor()
@@ -76,7 +76,7 @@ void Player::UpdateColor()
 
 bool Player::IsAlive()
 {
-    return health > 0;
+    return healthAmount > 0;
 }
 
 void Player::LoadHealthTexture()
@@ -86,9 +86,10 @@ void Player::LoadHealthTexture()
 
 void Player::DrawHealthTexture()
 {
-    DrawTextureEx(healthTexture, {0.F, 10.F}, 0.F, 0.07f, WHITE);
-    DrawTextureEx(healthTexture, {30.f, 10.F}, 0.F, 0.07f, WHITE);
-    DrawTextureEx(healthTexture, {60.f, 10.F}, 0.F, 0.07f, WHITE);
+    for (int i = 0; i < healthAmount; ++i)
+    {
+        DrawTextureEx(healthTexture, {0.F + i * 30.f, 10.F}, 0.F, 0.07f, WHITE);
+    }
 }
 
 Texture2D Player::GetHealthTexture()
