@@ -16,7 +16,6 @@ Player::Player() : Actor(1.f / 12.f), movementSpeed(-1200)
     isDamageTaken = false;
     isColorChangable = false;
 }
-/*
 
 void Player::Move()
 {
@@ -38,7 +37,6 @@ float Player::GetMovementSpeed() const
 {
     return movementSpeed;
 }
-*/
 
 bool Player::CheckCollision(Actor* nebula)
 {

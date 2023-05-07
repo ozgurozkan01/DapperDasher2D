@@ -30,9 +30,9 @@ public:
 
     Player();
 
-/*    float GetMovementSpeed() const;
+    float GetMovementSpeed() const;
     void Move();
-    void UpdateMovementSpeed(float newSpeed);*/
+    void UpdateMovementSpeed(float newSpeed);
     bool CheckIsOnGround() const;
     Color DetermineColor();
     bool CheckCollision(Actor* nebula);

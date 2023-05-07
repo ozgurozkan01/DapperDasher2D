@@ -83,7 +83,7 @@ void GameManager::Play()
                 ApplyGravity(player->velocity);
             }
 
-/*            else
+            else
             {
                 player->UpdateMovementSpeed(0);
             }
@@ -98,7 +98,7 @@ void GameManager::Play()
                 player->UpdateMovementSpeed(-player->GetMovementSpeed());
             }
 
-            player->Move();*/
+            player->Move();
 
             player->CalculateRunningTime();
 
