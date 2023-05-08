@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Nebula.h"
 #include "Background.h"
+#include "Score.h"
 
 GameManager::GameManager() : gameName("Dapper Dasher 2D")
 {
@@ -15,14 +16,14 @@ GameManager::GameManager() : gameName("Dapper Dasher 2D")
 
     player = new Player();
 
-    for (int i = 0; i < nebulaeSize; ++i)
+    for (auto & nebula : nebulae)
     {
-        nebulae[i] = new Nebula;
+        nebula = new Nebula();
     }
 
     lastNebula = nebulae[nebulaeSize-1];
-
     background = new Background();
+    score = new Score();
 }
 
 void GameManager::CreateGameWindow() const
@@ -45,6 +46,7 @@ void GameManager::Play()
     CreateGameWindow();
     SetGameFPS();
 
+
     player->LoadActorTexture();
     player->SetTextureRectangle(0.f,
                                 0.f,
@@ -62,7 +64,7 @@ void GameManager::Play()
                                         0.f,
                                         (float)nebulae[i]->actorTexture.width / (float)nebulae[i]->spriteAmountOneLine,
                                         (float)nebulae[i]->actorTexture.height / (float)nebulae[i]->spriteLineAmount);
-        nebulae[i]->SetTexturePosition((windowWidth - nebulae[i]->rectangle.width) + (nebulae[i]->distanceSpace + i * nebulae[i]->distanceSpace),
+        nebulae[i]->SetTexturePosition((windowWidth - nebulae[i]->rectangle.width) + (nebulae[i]->distanceSpace + (float)i * nebulae[i]->distanceSpace),
                                        windowHeight - nebulae[i]->rectangle.height - 15.f);
 
         std::cout << nebulae[i]->actorGroundY << std::endl;
@@ -102,9 +104,9 @@ void GameManager::Play()
 
             player->CalculateRunningTime();
 
-            for (int i = 0; i < nebulaeSize; ++i)
+            for (auto & nebula : nebulae)
             {
-                nebulae[i]->CalculateRunningTime();
+                nebula->CalculateRunningTime();
             }
 
             if (player->CanUpdateAnimate() && player->CheckIsOnGround())
@@ -112,21 +114,21 @@ void GameManager::Play()
                 player->AnimateActor(6);
             }
 
-            for (int i = 0; i < nebulaeSize; ++i)
+            for (auto & nebula : nebulae)
             {
-                if (nebulae[i]->CanUpdateAnimate())
+                if (nebula->CanUpdateAnimate())
                 {
-                    nebulae[i]->AnimateActor(8);
+                    nebula->AnimateActor(8);
                 }
             }
 
 
             background->MoveBackground();
 
-            for (int i = 0; i < nebulaeSize; ++i)
+            for (auto & nebula : nebulae)
             {
-                nebulae[i]->Move();
-                nebulae[i]->IncreaseNebulaSpeedInTime();
+                nebula->Move();
+                nebula->IncreaseNebulaSpeedInTime();
             }
 
             player->ArrangePlayerGroundPosition();
@@ -134,9 +136,9 @@ void GameManager::Play()
             background->DrawBackGround();
             player->DrawActor();
 
-            for (int i = 0; i < nebulaeSize; ++i)
+            for (auto & nebula : nebulae)
             {
-                nebulae[i]->DrawActor();
+                nebula->DrawActor();
             }
 
             player->DrawHealthTexture();
@@ -161,15 +163,19 @@ void GameManager::Play()
                 player->UpdateColor();
             }
 
-            for (int i = 0; i < nebulaeSize; ++i)
+            for (auto & nebula : nebulae)
             {
 
-                if (nebulae[i]->position.x < -nebulae[i]->rectangle.width)
+                if (nebula->position.x < -nebula->rectangle.width)
                 {
-                    nebulae[i]->UpdateNebulaPositionX(lastNebula);
-                    lastNebula = nebulae[i];
+                    nebula->UpdateNebulaPositionX(lastNebula);
+                    lastNebula = nebula;
                 }
             }
+
+            score->IncreaseScore();
+            score->UpdateScoreMultiplierInTime();
+            score->DrawScore();
         }
 
         else
@@ -182,11 +188,10 @@ void GameManager::Play()
 
     UnloadTexture(player->GetActor());
 
-    for (int i = 0; i < nebulaeSize; ++i)
+    for (auto & nebula : nebulae)
     {
-        UnloadTexture(nebulae[i]->GetActor());
+        UnloadTexture(nebula->GetActor());
     }
-
     background->UnloadBackgroundTextures();
     UnloadTexture(player->GetHealthTexture());
     CloseWindow();
@@ -199,5 +204,6 @@ GameManager::~GameManager()
 
 void GameManager::GameOver()
 {
-    DrawText("Game Over", windowWidth / 2 - 50, windowHeight / 2, 25, RED);
+    DrawText("Game Over !!", windowWidth / 2 - 60, windowHeight / 2, 25, RED);
+    DrawText(TextFormat("Score : %5f",score->GetScore()), windowWidth / 2 - 125, windowHeight / 2 - 50, 35, RED);
 }

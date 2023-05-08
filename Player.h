@@ -19,7 +19,7 @@ private:
     int colorUpdateTimeLimit;
 
     Texture2D healthTexture;
-
+    Rectangle healthRectangle;
 public:
 
     bool isColorChangable;

@@ -9,6 +9,7 @@
 class Player;
 class Nebula;
 class Background;
+class Score;
 
 class GameManager {
 
@@ -17,9 +18,12 @@ class GameManager {
 
     Player* player;
     static const int nebulaeSize = 5;
+
     Nebula* nebulae[nebulaeSize];
     Nebula* lastNebula;
+
     Background* background;
+    Score* score;
 
 public:
 
@@ -36,6 +40,7 @@ public:
     void SetGameFPS() const;
     void Play();
     void GameOver();
+
 };
 
 
