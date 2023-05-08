@@ -1,7 +1,6 @@
 //
 // Created by ozgur on 4/28/2023.
 //
-
 #include "GameManager.h"
 #include "raylib.h"
 #include "Player.h"
