@@ -26,16 +26,53 @@ Call Stack (most recent call first):
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Populating raylib
-CMake Error: Error: generator : MinGW Makefiles
-Does not match the generator used previously: Ninja
-Either remove the CMakeCache.txt file and CMakeFiles directory or choose a different binary directory.
-CMake Error at C:/Program Files/JetBrains/CLion 2023.1.2/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1612 (message):
-  CMake step for raylib failed: 1
-Call Stack (most recent call first):
-  C:/Program Files/JetBrains/CLion 2023.1.2/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1764:EVAL:2 (__FetchContent_directPopulate)
-  C:/Program Files/JetBrains/CLion 2023.1.2/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1764 (cmake_language)
-  CMakeLists.txt:19 (FetchContent_Populate)
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-subbuild
+[ 11%] Creating directories for 'raylib-populate'
+[ 22%] Performing download step (download, verify and extract) for 'raylib-populate'
+-- Downloading...
+   dst='C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/4.2.0.tar.gz'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/raysan5/raylib/archive/refs/tags/4.2.0.tar.gz'
+-- Downloading... done
+-- extracting...
+     src='C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/4.2.0.tar.gz'
+     dst='C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'raylib-populate'
+[ 44%] No patch step for 'raylib-populate'
+[ 55%] No configure step for 'raylib-populate'
+[ 66%] No build step for 'raylib-populate'
+[ 77%] No install step for 'raylib-populate'
+[ 88%] No test step for 'raylib-populate'
+[100%] Completed 'raylib-populate'
+[100%] Built target raylib-populate
+-- Performing Test COMPILER_HAS_THOSE_TOGGLES
+-- Performing Test COMPILER_HAS_THOSE_TOGGLES - Success
+-- Testing if -Werror=pointer-arith can be used -- compiles
+-- Testing if -Werror=implicit-function-declaration can be used -- compiles
+-- Testing if -fno-strict-aliasing can be used -- compiles
+-- Using raylib's GLFW
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Using Win32 for window creation
+-- Looking for dinput.h
+-- Looking for dinput.h - found
+-- Looking for xinput.h
+-- Looking for xinput.h - found
+-- Audio Backend: miniaudio
+-- Building raylib static library
+-- Generated build type: Debug
+-- Compiling with the flags:
+--   PLATFORM=PLATFORM_DESKTOP
+--   GRAPHICS=GRAPHICS_API_OPENGL_33
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug
