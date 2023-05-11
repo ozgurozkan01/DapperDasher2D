@@ -1,7 +1,7 @@
 # Distributed under the OSI-approved BSD 3-Clause License.  See accompanying
 # file Copyright.txt or https://cmake.org/licensing for details.
 
-cmake_minimum_required(VERSION 3.22.3)
+cmake_minimum_required(VERSION 3.25.2)
 
 # We name the project and the target for the ExternalProject_Add() call
 # to something that will highlight to the user what we are working on if
@@ -13,7 +13,7 @@ project(raylib-populate NONE)
 
 include(ExternalProject)
 ExternalProject_Add(raylib-populate
-                     "UPDATE_DISCONNECTED" "False" "URL" "https://github.com/raysan5/raylib/archive/refs/tags/4.2.0.tar.gz"
+                     "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "TRUE" "URL" "https://github.com/raysan5/raylib/archive/refs/tags/4.2.0.tar.gz"
                     SOURCE_DIR          "C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-src"
                     BINARY_DIR          "C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/_deps/raylib-build"
                     CONFIGURE_COMMAND   ""
@@ -22,6 +22,7 @@ ExternalProject_Add(raylib-populate
                     TEST_COMMAND        ""
                     USES_TERMINAL_DOWNLOAD  YES
                     USES_TERMINAL_UPDATE    YES
+                    USES_TERMINAL_PATCH     YES
 )
 
 

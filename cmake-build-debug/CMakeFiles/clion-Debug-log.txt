@@ -1,0 +1,41 @@
+"C:\Program Files\JetBrains\CLion 2023.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\ozgur\Documents\GitHub\DapperDasher2D -B C:\Users\ozgur\Documents\GitHub\DapperDasher2D\cmake-build-debug
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.1.2/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2023.1.2/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (dev) at C:/Program Files/JetBrains/CLion 2023.1.2/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1284 (message):
+  The DOWNLOAD_EXTRACT_TIMESTAMP option was not given and policy CMP0135 is
+  not set.  The policy's OLD behavior will be used.  When using a URL
+  download, the timestamps of extracted files should preferably be that of
+  the time of extraction, otherwise code that depends on the extracted
+  contents might not be rebuilt if the URL changes.  The OLD behavior
+  preserves the timestamps from the archive instead, but this is usually not
+  what you want.  Update your project to the NEW behavior or specify the
+  DOWNLOAD_EXTRACT_TIMESTAMP option with a value of true to avoid this
+  robustness issue.
+Call Stack (most recent call first):
+  CMakeLists.txt:12 (FetchContent_Declare)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Populating raylib
+CMake Error: Error: generator : MinGW Makefiles
+Does not match the generator used previously: Ninja
+Either remove the CMakeCache.txt file and CMakeFiles directory or choose a different binary directory.
+CMake Error at C:/Program Files/JetBrains/CLion 2023.1.2/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1612 (message):
+  CMake step for raylib failed: 1
+Call Stack (most recent call first):
+  C:/Program Files/JetBrains/CLion 2023.1.2/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1764:EVAL:2 (__FetchContent_directPopulate)
+  C:/Program Files/JetBrains/CLion 2023.1.2/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1764 (cmake_language)
+  CMakeLists.txt:19 (FetchContent_Populate)
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/ozgur/Documents/GitHub/DapperDasher2D/cmake-build-debug/CMakeFiles/CMakeOutput.log".
